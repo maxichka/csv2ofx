@@ -1,16 +1,24 @@
-"""
-For PC Financial Mastercards
-https://www.pcfinancial.ca/en/credit-cards
-"""
-from __future__ import absolute_import
+from __future__ import (
+    absolute_import, division, print_function, unicode_literals)
+
 from operator import itemgetter
 
 mapping = {
     'has_header': True,
-    'bank': 'PC Financial',
-    'currency': 'CAD',
-    'account': 'Mastercard',
-    'date': itemgetter('Date'),
-    'amount': lambda r: float(r['Amount']) * -1.0,
-    'payee': itemgetter('"Merchant Name"'),
+    'is_split': False,
+    'bank': 'Bank Name',
+    'currency': 'USD',
+    'delimiter': ',',
+    'account': itemgetter('Field'),
+    'account_id': itemgetter('Field'),
+    'date': itemgetter('Field'),
+    'type': itemgetter('Field'),
+    'amount': itemgetter('Field'),
+    'balance': itemgetter('Field'),
+    'desc': itemgetter('Field'),
+    'payee': itemgetter('Field'),
+    'notes': itemgetter('Field'),
+    'class': itemgetter('Field'),
+    'id': itemgetter('Field'),
+    'check_num': itemgetter('Field'),
 }
