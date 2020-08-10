@@ -7,10 +7,10 @@ from operator import itemgetter
 
 mapping = {
     'has_header': True,
-    'bank': 'PC Financial',
+    'bank': 'Rogers Bank',
     'currency': 'CAD',
-    'account': 'Mastercard',
+    'account': 'Account',
     'date': itemgetter('Date'),
     'amount': lambda r: float(r['Amount']) * -1.0,
-    'payee': itemgetter('"Merchant Name"'),
+    'payee': itemgetter('"Payee"'),
 }
